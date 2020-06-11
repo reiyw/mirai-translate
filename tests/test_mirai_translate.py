@@ -7,7 +7,7 @@ from mirai_translate import Client
 def test_client():
     trial = respx.get(
         "https://miraitranslate.com/trial",
-        content=open("tests/fixtures/index.html").read(),
+        content=open("tests/fixtures/index.html", "rb").read(),
     )
     cli = Client(delay_sec=0)
     assert trial.called
