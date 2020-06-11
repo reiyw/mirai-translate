@@ -5,7 +5,7 @@ description = ""
 authors = ["reiyw <reiyw.setuve@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6"
 httpx = "^0.13.2"
 beautifulsoup4 = "^4.9.1"
 
