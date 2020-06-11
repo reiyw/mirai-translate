@@ -1,6 +1,6 @@
 # mirai-translate
 
-mirai-translate is an unofficial [Mirai Translate](https://miraitranslate.com/en/) API for Python. 
+mirai-translate is an unofficial [Mirai Translate](https://miraitranslate.com/en/) API for Python.
 
 ```
 pip install mirai-translate

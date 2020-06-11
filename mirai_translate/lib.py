@@ -2,8 +2,8 @@ from dataclasses import dataclass, field
 from time import sleep, time
 from typing import Optional
 
-from bs4 import BeautifulSoup
 import httpx
+from bs4 import BeautifulSoup
 
 
 class MiraiTranslateError(Exception):
