@@ -1,5 +1,9 @@
 # mirai-translate
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mirai-translate)
+![PyPI](https://img.shields.io/pypi/v/mirai-translate)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/reiyw/mirai-translate/Tests)
+
 mirai-translate is an unofficial [Mirai Translate](https://miraitranslate.com/en/) API for Python.
 
 ```
