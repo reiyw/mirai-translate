@@ -1,3 +1,4 @@
+import pytest
 import respx
 
 from mirai_translate import Client
@@ -21,3 +22,10 @@ def test_client():
     )
     assert cli.translate("これはテスト", "ja", "en") == "This is a test."
     assert translate.called
+
+
+@pytest.mark.slow
+def test_repeated():
+    cli = Client()
+    for _ in range(11):
+        assert cli.translate("test", "en", "ja") == "試験"

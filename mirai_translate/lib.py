@@ -12,7 +12,7 @@ class MiraiTranslateError(Exception):
 
 @dataclass
 class Client:
-    delay_sec: Optional[int] = 3
+    delay_sec: Optional[int] = 6
     _cli: httpx.Client = field(
         default=httpx.Client(base_url="https://miraitranslate.com"), init=False
     )
@@ -51,8 +51,15 @@ class Client:
         self._prev_req_time = time()
         j = res.json()
 
-        if j["status"] == "failed":
+        status = j["status"]
+        if status == "failed" or status == "limit":
             raise MiraiTranslateError(j["error_msg"])
+
+        if status != "success":
+            raise MiraiTranslateError(
+                '"status" should be either "failed", "limit", '
+                f'or "success" but got {status}'
+            )
 
         return j["outputs"][0]["output"]
 
