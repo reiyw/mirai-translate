@@ -31,7 +31,10 @@ class Client:
 
     def _refresh_tran(self):
         self._assure_deley()
-        res = self._cli.get("/trial")
+        try:
+            res = self._cli.get("/trial")
+        except httpx.ReadTimeout:
+            raise MiraiTranslateError("Response from Mirai Translate timed out")
         self._prev_req_time = time()
         soup = BeautifulSoup(res.content, "html.parser")
         self._tran = soup.find(id="tranInput")["value"]
@@ -47,7 +50,10 @@ class Client:
             tran=self._tran,
         )
         self._assure_deley()
-        res = self._cli.post("/trial/translate.php", data=payload)
+        try:
+            res = self._cli.post("/trial/translate.php", data=payload)
+        except httpx.ReadTimeout:
+            raise MiraiTranslateError("Response from Mirai Translate timed out")
         self._prev_req_time = time()
         j = res.json()
 
