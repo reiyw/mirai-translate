@@ -12,6 +12,15 @@ class MiraiTranslateError(Exception):
 
 @dataclass
 class Client:
+    """Mirai Translate Client.
+
+    Attributes
+    ----------
+    delay_sec : int
+        Minimum request interval (the default is 6 because we can only request up to
+        10 per minute).
+    """
+
     delay_sec: Optional[int] = 6
     _cli: httpx.Client = field(
         default=httpx.Client(base_url="https://miraitranslate.com"), init=False
@@ -70,6 +79,26 @@ class Client:
         return j["outputs"][0]["output"]
 
     def translate(self, text: str, source: str, target: str) -> str:
+        """Translate `text` from `source` to `target`.
+
+        Parameters
+        ----------
+        text : str
+            Source text.
+        source : str
+            Source language ("en", "ja", ...).
+        target : str
+            Target language ("en", "ja", ...).
+
+        Raises
+        ------
+        MiraiTranslateError
+
+        Returns
+        -------
+        str
+            Translated text.
+        """
         try:
             return self._translate(text, source, target)
         except MiraiTranslateError:
