@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mirai-translate"
-version = "0.1.0"
+version = "0.1.1"
 description = "Unofficial Mirai Translate API for Python"
 authors = ["reiyw <reiyw.setuve@gmail.com>"]
 readme = "README.md"
