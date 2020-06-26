@@ -429,7 +429,7 @@ description = "A utility for mocking out the Python HTTPX and HTTP Core librarie
 name = "respx"
 optional = false
 python-versions = ">=3.6"
-version = "0.11.1"
+version = "0.11.2"
 
 [package.dependencies]
 asynctest = "*"
@@ -530,7 +530,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "89e99943b0c8cc71f53af5c59141c644ba468c4bce0aa47ace33f6ccba2f5a96"
+content-hash = "28d1b5379e750bc2f6b58d81608c383a77b34b3f622d3cb6ca85d5aac30f9824"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -718,8 +718,8 @@ regex = [
     {file = "regex-2020.6.8.tar.gz", hash = "sha256:e9b64e609d37438f7d6e68c2546d2cb8062f3adb27e6336bc129b51be20773ac"},
 ]
 respx = [
-    {file = "respx-0.11.1-py2.py3-none-any.whl", hash = "sha256:cb5fcefca881df325212e45ee116b75697a2606c2a7cd6ecc143c21a8201d1b1"},
-    {file = "respx-0.11.1.tar.gz", hash = "sha256:61202f3ec8e5902fbfad6a7ffa17bd5a0f0453a36bbaeaf497f6a7abc6ac0e78"},
+    {file = "respx-0.11.2-py2.py3-none-any.whl", hash = "sha256:2b08186ee5f19eafaf658358f487c5b969aeaf417270beda93d5ed7a33a50d9d"},
+    {file = "respx-0.11.2.tar.gz", hash = "sha256:c30d59a4685918f2405d0a2bf5e22465bf05fa07ec52a35da6ee46c51df2ea7d"},
 ]
 rfc3986 = [
     {file = "rfc3986-1.4.0-py2.py3-none-any.whl", hash = "sha256:af9147e9aceda37c91a05f4deb128d4b4b49d6b199775fd2d2927768abdc8f50"},
