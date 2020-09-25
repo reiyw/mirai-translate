@@ -13,7 +13,7 @@ def test_client():
     cli = Client(delay_sec=0)
     assert trial.called
     assert (
-        cli._tran == "jsXIHl5tgZHSJDgvPemaVRe9XIS1vME5eCoMOJfVJMN20TNpYaqTRu3PdvqzhVUm"
+        cli._tran == "xx3At5tG4vPwk3VCwKfXOq43RqCBEzScNvCgRWNvrCH2fDf2yk0m1UGtktVOINQ5"
     )
 
     translate = respx.post(

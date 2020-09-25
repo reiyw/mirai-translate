@@ -1,9 +1,9 @@
+import re
 from dataclasses import dataclass, field
 from time import sleep, time
 from typing import Optional
 
 import httpx
-from bs4 import BeautifulSoup
 
 
 class MiraiTranslateError(Exception):
@@ -45,8 +45,9 @@ class Client:
         except httpx.ReadTimeout:
             raise MiraiTranslateError("Response from Mirai Translate timed out")
         self._prev_req_time = time()
-        soup = BeautifulSoup(res.content, "html.parser")
-        self._tran = soup.find(id="tranInput")["value"]
+        self._tran = (
+            re.search(rb'var tran = "(.+?)";', res.content).group(1).decode("utf-8")
+        )
 
     def _translate(self, text: str, source: str, target: str) -> str:
         payload = dict(
