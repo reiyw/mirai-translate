@@ -9,7 +9,6 @@ repository = "https://github.com/reiyw/mirai-translate"
 [tool.poetry.dependencies]
 python = "^3.7"
 httpx = "^0.13.2"
-beautifulsoup4 = "^4.9.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.4"
