@@ -5,12 +5,12 @@ repos:
       - id: black
 
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.8
+    rev: 3.8.3
     hooks:
       - id: flake8
 
   - repo: https://github.com/timothycrosley/isort
-    rev: 4.3.21
+    rev: 5.5.4
     hooks:
       - id: isort
         additional_dependencies: [toml]

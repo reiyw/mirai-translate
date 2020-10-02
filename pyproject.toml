@@ -21,16 +21,8 @@ isort = "^5.0.7"
 
 [tool.isort]
 line_length = 88
-force_grid_wrap = 0
-atomic = true
 include_trailing_comma = true
-lines_after_imports = 2
 multi_line_output = 3
-use_parentheses = true
-not_skip = "__init__.py"
-filter_files = true
-known_first_party = "mirai_translate"
-known_third_party = ["respx", "pytest"]
 
 [build-system]
 requires = ["poetry>=0.12"]
