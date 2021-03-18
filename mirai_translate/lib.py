@@ -23,7 +23,7 @@ class Client:
 
     delay_sec: Optional[int] = 6
     _cli: httpx.Client = field(
-        default=httpx.Client(base_url="https://miraitranslate.com"), init=False
+        default=httpx.Client(base_url="https://miraitranslate.com"), init=False,
     )
     # Key required to access `translate.php`
     _tran: Optional[str] = field(default=None, init=False)
@@ -54,14 +54,13 @@ class Client:
             input=text,
             source=source,
             target=target,
-            profile="nmt",
-            kind="nmt",
-            bt=False,
+            profile="inmt",
+            filter_profile="nmt",
             tran=self._tran,
         )
         self._assure_deley()
         try:
-            res = self._cli.post("/trial/translate.php", data=payload)
+            res = self._cli.post("/trial/api/translate.php", json=payload,)
         except httpx.ReadTimeout:
             raise MiraiTranslateError("Response from Mirai Translate timed out")
         self._prev_req_time = time()
@@ -77,7 +76,7 @@ class Client:
                 f'or "success" but got {status}'
             )
 
-        return j["outputs"][0]["output"]
+        return j["outputs"][0]["output"][0]["translation"]
 
     def translate(self, text: str, source: str, target: str) -> str:
         """Translate `text` from `source` to `target`.
