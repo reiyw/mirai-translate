@@ -11,7 +11,7 @@ python = "^3.7"
 httpx = "^0.17.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.1"
+pytest = "^6.2"
 respx = "^0.16.3"
 
 [tool.isort]
